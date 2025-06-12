@@ -1,7 +1,7 @@
 name: Run Preprocessing
 
 on:
-  workflow_dispatch:  # Bisa dijalankan manual dari GitHub UI
+  workflow_dispatch:
   push:
     paths:
       - 'Dataset_raw.csv'
@@ -15,15 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: |
-          pip install pandas scikit-learn
+        run: pip install pandas scikit-learn
 
       - name: Run preprocessing script
-        run: |
-          python preprocessing/automate_Muhammad-Fathi-Farhat.py
+        run: python preprocessing/automate_Muhammad-Fathi-Farhat.py
