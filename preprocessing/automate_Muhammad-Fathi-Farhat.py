@@ -49,20 +49,11 @@ Jika dataset berupa unstructured data, silakan sesuaikan dengan format seperti k
 Akan dilakukan load dataset langsung dari Kaggle
 """
 
-# Upload kaggle.json
-from google.colab import files
-files.upload()
+# Load dataset dari GitHub
+# pada tahap ini, dataset yang sudah didownload dari kaggle diupload di repository github 
 
-# Buat direktori .kaggle dan pindahkan credential
-!mkdir -p ~/.kaggle
-!cp kaggle.json ~/.kaggle/
-!chmod 600 ~/.kaggle/kaggle.json
-
-# download dataset dari link
-!kaggle datasets download -d muhammadshahidazeem/customer-churn-dataset
-
-# Ekstrak data
-!unzip customer-churn-dataset.zip
+url = "https://raw.githubusercontent.com/farhatfathi/Eksperimen_SML_Muhammad-Fathi-Farhat/refs/heads/main/Dataset_raw.csv"
+df = pd.read_csv(url, delimiter=',')
 
 """# **4. Exploratory Data Analysis (EDA)**
 
@@ -72,7 +63,7 @@ Tujuan dari EDA adalah untuk memperoleh wawasan awal yang mendalam mengenai data
 """
 
 # melihat sekilas data
-df = pd.read_csv('customer_churn_dataset-testing-master.csv')
+print(df.shape)
 df.head()
 
 # melihat info data
