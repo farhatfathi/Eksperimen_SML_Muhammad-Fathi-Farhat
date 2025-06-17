@@ -26,12 +26,8 @@ import os
 import zipfile
 import pandas as pd
 import numpy as np
-import missingno as msno
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
