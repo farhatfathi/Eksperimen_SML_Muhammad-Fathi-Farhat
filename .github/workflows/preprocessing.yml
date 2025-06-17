@@ -5,7 +5,7 @@ on:
   push:
     paths:
       - 'Dataset_raw.csv'
-      - 'preprocessing/eksperimen_muhammad_fathi_farhat.py'
+      - 'preprocessing/automate_Muhammad-Fathi-Farhat.py'
 
 jobs:
   preprocess:
